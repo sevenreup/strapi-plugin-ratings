@@ -16,8 +16,7 @@ import {
 import { ModalLayout, ModalHeader, ModalBody, ModalFooter, ModalClose } from '../ui/modal';
 import { useFetchClient } from '@strapi/admin/strapi-admin';
 import { Review } from './Review';
-// import ReactStarsRating from 'react-awesome-stars-rating';
-
+import { Rating } from '@smastrom/react-rating';
 const ROW_COUNT = 6;
 const COL_COUNT = 10;
 
@@ -54,12 +53,12 @@ const ReviewsByKey = () => {
             <Td>{contentID}</Td>
             <Td>{reviews}</Td>
             <Td>
-              {/* <ReactStarsRating
-                isEdit={false}
-                isHalf={true}
+              <Rating
+                readOnly={false}
+                // isHalf={true}
                 value={averageScore}
-                isArrowSubmit={false}
-              /> */}
+                // isArrowSubmit={false}
+              />
             </Td>
           </TableRow>
         );

@@ -12,7 +12,7 @@ import {
 } from '@tanstack/react-query';
 import HomePage from './HomePage';
 import { Page } from '@strapi/strapi/admin';
-
+import '@smastrom/react-rating/style.css'
 const queryClient = new QueryClient();
 
 const App = () => {

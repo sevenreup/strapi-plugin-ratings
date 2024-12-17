@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Flex, Button, Box, Typography } from '@strapi/design-system';
 import { ModalLayout, ModalHeader, ModalBody, ModalFooter, ModalClose } from '../ui/modal';
 import { ISOToFull } from '../../utils/date-format';
-// import ReactStarsRating from 'react-awesome-stars-rating';
+import { Rating } from '@smastrom/react-rating';
 import { useFetchClient } from '@strapi/admin/strapi-admin';
 
 export const Review = ({
@@ -56,12 +56,12 @@ export const Review = ({
           <Box background="neutral0" paddingBottom={3}>
             <Flex>
               <Typography>Score: {data.score} / 5</Typography>
-              {/* <ReactStarsRating
-                isEdit={false}
-                isHalf={true}
+              <Rating
+                readOnly={false}
+                // isHalf={true}
                 value={data.score}
-                isArrowSubmit={false}
-              /> */}
+                // isArrowSubmit={false}
+              />
             </Flex>
           </Box>
           {data.comment && (

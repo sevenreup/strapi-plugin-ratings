@@ -16,7 +16,7 @@ import { Review } from './Review';
 import { useFetchClient } from '@strapi/admin/strapi-admin';
 import { ISOToISO9075 } from '../../utils/date-format';
 import { ModalLayout, ModalHeader, ModalBody, ModalFooter, ModalClose } from '../ui/modal';
-// import ReactStarsRating from 'react-awesome-stars-rating';
+import { Rating } from '@smastrom/react-rating';
 
 const ROW_COUNT = 6;
 const COL_COUNT = 10;
@@ -211,7 +211,8 @@ const ReviewRow = ({ data, actionDelete }: { data: any; actionDelete: any }) => 
       <Td>{data.author.username}</Td>
       <Td>{contentSummary}</Td>
       <Td>
-        {/* <ReactStarsRating isEdit={false} isHalf={true} value={data.score} isArrowSubmit={false} /> */}
+        <Rating readOnly={false} value={data.score} />
+        {/* isHalf={true} isArrowSubmit={false}*/}
       </Td>
       <Td>{data.related_to.slug}</Td>
       <Td>{ISOToISO9075(data.createdAt)}</Td>
